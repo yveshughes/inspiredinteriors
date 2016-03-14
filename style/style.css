@@ -177,6 +177,7 @@ body {
   /* Handle the widths */
   .masthead,
   .mastfoot,
+  .inner,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
@@ -185,6 +186,7 @@ body {
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
+  .inner,
   .cover-container {
     width: 700px;
   }

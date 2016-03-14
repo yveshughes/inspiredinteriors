@@ -207,3 +207,17 @@
 // execute above function
     initPhotoSwipeFromDOM('.my-gallery');
 })();
+
+
+$(document).ready(function () {
+    var jsonURL = "gallery.json";
+    $.getJSON(jsonURL, function (json)
+    {var imgList= "";
+        $.each(json.items, function () {
+            imgList += '<figure class="col-lg-3 col-md-3 col-sm-2 col-xs-12" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
+                '<a href="'+ this.url + '" itemprop="contentUrl" data-size="800x600"><img width="300" height="200" src= "' + this.url + '"></a>'+
+                '<figcaption itemprop="caption description">'+ this.title +'</figcaption></figure>';
+        });
+        $('#dvProdList').append(imgList);
+    });
+});
